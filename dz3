@@ -1,0 +1,174 @@
+#1. В диапазоне натуральных чисел от 2 до 99 определить, сколько из них кратны каждому из чисел в диапазоне от 2 до 9.
+
+
+#Задача выполнена при условии, что количество чисел считается исходя из кратности ХОТЯ-БЫ ОДНОМУ числу в диапазоне от 2 до 9,
+#т.к число кратное каждому числу из диапазона от 2 до 9 выходит далеко за диапазон от 2 до 99
+#
+# counter = 0
+# for i in range(2, 100):
+#     for k in range(2, 10):
+#         if i%k == 0:
+#             counter += 1
+#             break
+# print(f'Количество чисел: {counter}')
+
+
+
+
+
+
+
+
+
+#2. Во втором массиве сохранить индексы четных элементов первого массива. Например, если дан массив со значениями 8, 3, 15, 6, 4, 2,
+# то во второй массив надо заполнить значениями 1, 4, 5, 6 (или 0, 3, 4, 5 - если индексация начинается с нуля), т.к. именно
+# в этих позициях первого массива стоят четные числа.
+
+# number = [8, 3, 15, 6, 4, 2,]
+# numbers = list()
+# index = 0
+# for i in number:
+#     index += 1
+#     if i % 2 == 0:
+#         numbers.append(index-1)
+# print(numbers)
+#
+
+
+
+#3. В массиве случайных целых чисел поменять местами минимальный и максимальный элементы.
+#
+# import random as rn
+#
+# numlist = list()
+# for i in range(5):
+#     numlist.append(rn.randint(50,100))
+# print(f'До смены мест: {numlist}')
+# max_num = max(numlist)
+# min_num = min(numlist)
+# print(f'Максимальное: {max_num}, минимальное: {min_num}')
+# max_num_index = numlist.index(max_num)
+# min_num_index = numlist.index(min_num)
+# numlist[min_num_index] = max_num
+# numlist[max_num_index] = min_num
+# print(f'После смены мест: {numlist}')
+#
+
+
+
+
+
+
+#4. Определить, какое число в массиве встречается чаще всего.
+#
+# import random as rn
+#
+# numlist = list()
+# for i in range(20):
+#    numlist.append(rn.randint(90,100))
+# print(f'Массив : {numlist}')
+#
+# set_numlist = set(numlist)
+# max_count = 0
+# for i in set_numlist:
+#     count = numlist.count(i)
+#     if max_count < count:
+#         max_count = count
+#         max_number = i
+# print(f'Число {max_number} встречается {max_count} раз')
+#
+#
+#
+#
+
+
+#5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
+
+# Задача решена для двух случаев когда ответом для массива [-100, -50, -1] будет в одном случае -100 (самое самое отрицательное)
+# и  в другом случае -1 (как самое близкое к положительному), т.к. не совсем четко понимаю понятие максимальный отрицательный элемент
+#
+# import random as rn
+#
+# numlist = list()
+# for i in range(20):
+#    numlist.append(rn.randint(-100,100))
+# print(f'Массив : {numlist}')
+# print(f'Самое самое отрицательное: {min(numlist)}, его индекс {numlist.index(min(numlist))}')
+# unique_nums = list(set(numlist))
+# nums_with_minus = [item for item in unique_nums if item<0]
+# print(f'Близжайшее к положительному отрицательное число: {max(nums_with_minus)}, его индекс {numlist.index(max(nums_with_minus))}')
+#
+
+
+
+
+
+
+
+
+
+#6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами.
+# Сами минимальный и максимальный элементы в сумму не включать.
+
+
+# import random as rn
+#
+# numlist = list()
+# for i in range(10):
+#    numlist.append(rn.randint(10,100))
+# print(f'Массив : {numlist}')
+# index_of_max = numlist.index(max(numlist))
+# index_of_min = numlist.index(min(numlist))
+# print(f'Минимальное: {min(numlist)}, его индекс {index_of_min}')
+# print(f'Максимальное: {max(numlist)}, его индекс {index_of_max}')
+# summ = 0
+# for i in range(index_of_min+1, index_of_max):
+#     summ += numlist[i]
+# print(f'Сумма: {summ}')
+
+#7. В одномерном массиве целых чисел определить два наименьших элемента. Они могут быть как равны между собой (оба являться минимальными), так и различаться.
+
+# import random as rn
+#
+# numlist = list()
+# for i in range(10):
+#     numlist.append(rn.randint(10,15))
+# print(f'Массив : {numlist}')
+# index_of_min1 = numlist.index(min(numlist))
+# num1 = numlist[index_of_min1]
+# numlist.remove(num1)
+# index_of_min2 = numlist.index(min(numlist))
+# num2 = numlist[index_of_min2]
+# print(f'Два наименьших: {num1}, {num2}')
+#
+#
+
+
+
+
+
+
+#8. Матрица 5x4 заполняется вводом с клавиатуры кроме последних элементов строк.
+# Программа должна вычислять сумму введенных элементов каждой строки и записывать ее в последнюю ячейку строки. В конце следует вывести полученную матрицу.
+
+M = 5
+N = 4
+a = []
+for i in range(N):
+    b = []
+    s = 0
+    for j in range(M ):
+        n = int(input())
+        s += n
+        b.append(n)
+    b.append(s)
+    a.append(b)
+
+for i in a:
+    print(i)
+
+
+
+
+
+#9. Найти максимальный элемент среди минимальных элементов столбцов матрицы.
