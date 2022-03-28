@@ -1,0 +1,83 @@
+#1
+
+
+n = input("Введите трехзначное число: ")
+n = int(n)
+a = n % 10
+n = n // 10
+b = n % 10
+n = n // 10
+print("Сумма цифр :", n + a + b)
+
+#2
+
+#3
+
+#4
+
+import random
+a = int(input('Введите первое число диапазона:'))
+b = int(input('Введите второе число диапазона:'))
+print(f'Случайное число  = {random.randint(a, b)}')
+
+
+a = float(a)
+b = float(b)
+num = random.uniform(a, b)
+
+print(f"Случайное вещественное число  = {format(num, '.1f')}")
+
+let1 = input('Введите первую букву диапазона (английские, нижний регистр)')
+let2 = input('Введите вторую букву диапазона (английские, нижний регистр)')
+
+alph = ['0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+        'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+let1_ind = alph.index(let1)
+let2_ind = alph.index(let2)
+rand_let = alph[random.randint(let1_ind, let2_ind)]
+
+print(f'Случайная буква из  дипазона "{rand_let}"')
+
+
+#5
+
+
+print(f'Выбранные вами буквы имеют порядковые номера: ' f'{let1} = {let1_ind}, {let2} = {let2_ind},' f' и между ними находятся {let2_ind - let1_ind - 1} букв(ы)')
+
+
+#6
+
+num1 = int(input('Введите порядковый номер буквы'))
+
+print(f'Под номероv {num1} буква "{alph[num1]}"')
+
+# 8. Определить, является ли год, который ввел пользователем, високосным или невисокосным.
+
+
+year = int(input('введите год'))
+if year % 4 != 0:
+    print("Обычный")
+elif year % 100 == 0:
+    if year % 400 == 0:
+        print("Високосный")
+    else:
+        print("Обычный")
+else:
+    print("Високосный")
+
+
+#9
+
+
+print('Введите три числа: ')
+a = int(input())
+b = int(input())
+c = int(input())
+if b < a < c or c < a < b:
+    print('Среднее:', a)
+elif a < b < c or c < b < a:
+    print('Среднее:', b)
+else:
+    print('Среднее:', c)
